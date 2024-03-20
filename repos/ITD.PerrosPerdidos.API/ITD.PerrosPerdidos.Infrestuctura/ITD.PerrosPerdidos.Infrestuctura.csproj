@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ITD.PerrosPerdidos.API\ITD.PerrosPerdidos.API.csproj" />
+    <ProjectReference Include="..\ITD.PerrosPerdidos.Domain\ITD.PerrosPerdidos.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+</Project>
