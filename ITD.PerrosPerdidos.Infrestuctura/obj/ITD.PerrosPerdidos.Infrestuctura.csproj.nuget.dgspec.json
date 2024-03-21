@@ -1,0 +1,210 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Infrestuctura\\ITD.PerrosPerdidos.Infrestuctura.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.API\\ITD.PerrosPerdidos.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.API\\ITD.PerrosPerdidos.API.csproj",
+        "projectName": "ITD.PerrosPerdidos.API",
+        "projectPath": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.API\\ITD.PerrosPerdidos.API.csproj",
+        "packagesPath": "C:\\Users\\estre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\estre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.ApiDescription.Server": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Domain\\ITD.PerrosPerdidos.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Domain\\ITD.PerrosPerdidos.Domain.csproj",
+        "projectName": "ITD.PerrosPerdidos.Domain",
+        "projectPath": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Domain\\ITD.PerrosPerdidos.Domain.csproj",
+        "packagesPath": "C:\\Users\\estre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\estre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Infrestuctura\\ITD.PerrosPerdidos.Infrestuctura.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Infrestuctura\\ITD.PerrosPerdidos.Infrestuctura.csproj",
+        "projectName": "ITD.PerrosPerdidos.Infrestuctura",
+        "projectPath": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Infrestuctura\\ITD.PerrosPerdidos.Infrestuctura.csproj",
+        "packagesPath": "C:\\Users\\estre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Infrestuctura\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\estre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.API\\ITD.PerrosPerdidos.API.csproj": {
+                "projectPath": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.API\\ITD.PerrosPerdidos.API.csproj"
+              },
+              "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Domain\\ITD.PerrosPerdidos.Domain.csproj": {
+                "projectPath": "C:\\Users\\estre\\source\\repos\\Itd.Perrosperdidos.API\\ITD.PerrosPerdidos.Domain\\ITD.PerrosPerdidos.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
