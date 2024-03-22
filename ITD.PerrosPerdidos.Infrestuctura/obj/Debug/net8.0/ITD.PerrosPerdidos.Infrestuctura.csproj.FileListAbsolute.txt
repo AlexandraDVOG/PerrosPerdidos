@@ -1,5 +1,0 @@
-C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Infrestuctura\obj\Debug\net8.0\ITD.PerrosPerdidos.Infrestuctura.csproj.AssemblyReference.cache
-C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Infrestuctura\obj\Debug\net8.0\ITD.PerrosPerdidos.Infrestuctura.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Infrestuctura\obj\Debug\net8.0\ITD.PerrosPerdidos.Infrestuctura.AssemblyInfoInputs.cache
-C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Infrestuctura\obj\Debug\net8.0\ITD.PerrosPerdidos.Infrestuctura.AssemblyInfo.cs
-C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Infrestuctura\obj\Debug\net8.0\ITD.PerrosPerdidos.Infrestuctura.csproj.CoreCompileInputs.cache
