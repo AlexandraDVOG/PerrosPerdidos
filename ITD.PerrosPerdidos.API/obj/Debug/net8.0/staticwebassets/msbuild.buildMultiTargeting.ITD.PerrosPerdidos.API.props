@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\ITD.PerrosPerdidos.API.props" />
-</Project>

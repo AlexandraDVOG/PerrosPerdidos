@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\ITD.PerrosPerdidos.API.props" />
-</Project>
