@@ -1,0 +1,11 @@
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\bin\Debug\net8.0\ITD.PerrosPerdidos.Domain.deps.json
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\bin\Debug\net8.0\ITD.PerrosPerdidos.Domain.dll
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\bin\Debug\net8.0\ITD.PerrosPerdidos.Domain.pdb
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\obj\Debug\net8.0\ITD.PerrosPerdidos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\obj\Debug\net8.0\ITD.PerrosPerdidos.Domain.AssemblyInfoInputs.cache
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\obj\Debug\net8.0\ITD.PerrosPerdidos.Domain.AssemblyInfo.cs
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\obj\Debug\net8.0\ITD.PerrosPerdidos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\obj\Debug\net8.0\ITD.PerrosPerdidos.Domain.dll
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\obj\Debug\net8.0\refint\ITD.PerrosPerdidos.Domain.dll
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\obj\Debug\net8.0\ITD.PerrosPerdidos.Domain.pdb
+C:\Users\estre\source\repos\Itd.Perrosperdidos.API\ITD.PerrosPerdidos.Domain\obj\Debug\net8.0\ref\ITD.PerrosPerdidos.Domain.dll
