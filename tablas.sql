@@ -1,8 +1,3 @@
-/*DROP SCHEMA public CASCADE;
-CREATE SCHEMA public;
-GRANT ALL ON SCHEMA public TO postgres;
-GRANT ALL ON SCHEMA public TO public;*/
-
 -- Creación de la tabla administradores (si no existe)
 CREATE TABLE IF NOT EXISTS administradores (
     id_administrador INT PRIMARY KEY,
@@ -36,5 +31,5 @@ CREATE TABLE IF NOT EXISTS mascotaperdida (
     sexo CHAR(1),
     celular INT,
     id_ubicacion VARCHAR(255),
-    imagen BYTEA
+    imagen BLOB
 );
