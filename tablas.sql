@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS PERROPERDIDO;
 CREATE TABLE IF NOT EXISTS administradores (
     id_administrador INT PRIMARY KEY,
     usuario VARCHAR(255),
-    telefono BIGINT,
+    celular BIGINT,
     contraseña VARCHAR(255)
 );
 
@@ -33,7 +33,11 @@ CREATE TABLE IF NOT EXISTS mascotaperdida (
     color VARCHAR(50),
     tamaño VARCHAR(20),
     sexo CHAR(1),
-    celular INT,
+    celular BIGINT,
     id_ubicacion VARCHAR(255),
     imagen BLOB
 );
+
+-- ALTER TABLE mascotaperdida MODIFY celular BIGINT;
+
+
