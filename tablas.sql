@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS PERROPERDIDO;
+
 -- Creación de la tabla administradores (si no existe)
 CREATE TABLE IF NOT EXISTS administradores (
     id_administrador INT PRIMARY KEY,
