@@ -4,9 +4,11 @@ CREATE DATABASE IF NOT EXISTS PERROPERDIDO;
 CREATE TABLE IF NOT EXISTS administradores (
     id_administrador INT PRIMARY KEY,
     usuario VARCHAR(255),
-    telefono INT,
+    telefono BIGINT,
     contraseña VARCHAR(255)
 );
+
+-- ALTER TABLE administradores MODIFY telefono BIGINT;
 
 -- Creación de la tabla usuario (si no existe)
 CREATE TABLE IF NOT EXISTS usuario (
