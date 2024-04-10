@@ -1,5 +1,5 @@
 -- Insertar registros en la tabla administradores
-INSERT INTO administradores (id_administrador, usuario, telefono, contraseña) VALUES
+INSERT INTO administradores (id_administrador, usuario, celular, contraseña) VALUES
 (1, 'admin1', 5512345678, 'password1'),
 (2, 'admin2', 5523456789, 'password2'),
 (3, 'admin3', 5534567890, 'password3'),
