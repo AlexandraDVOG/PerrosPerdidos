@@ -6,7 +6,7 @@ CREATE PROCEDURE alta_administrador(
 )
 BEGIN
     -- Insertar el nuevo administrador
-    INSERT INTO administradores (usuario, telefono, contraseña)
+    INSERT INTO administradores (usuario, celular, contraseña)
     VALUES (p_usuario, p_telefono, p_contrasena);
 
     -- Obtener el ID del nuevo administrador
