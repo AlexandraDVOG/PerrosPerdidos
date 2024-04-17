@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ITD.PerrosPerdidos.Infrestuctura.Repostory.Context; // Asegúrate de importar el espacio de nombres adecuado
+using ITD.PerrosPerdidos.Infrestuctura.Repostory.Context;
 
-namespace ITD.PerrosPerdidos.Aplication.Presenters
+namespace ITD.PerrosPerdidos.Aplication.Interfaces
 {
-    public class AdministradorLogic : AdministradorPresenter
+    public class AdministradorLogic : IAdministradorPresenter
     {
         public List<string> _error { get; set; }
         private readonly AdministradorRepostoryContext _administradorRepository;
