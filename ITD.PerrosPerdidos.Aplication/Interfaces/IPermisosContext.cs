@@ -1,3 +1,5 @@
+using ITD.PerrosPerdidos.Domain.DTO.DATA;
+using ITD.PerrosPerdidos.Domain.DTO.Requests.Permisos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

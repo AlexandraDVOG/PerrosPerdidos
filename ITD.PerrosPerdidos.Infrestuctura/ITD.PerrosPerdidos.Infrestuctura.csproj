@@ -20,4 +20,8 @@
     <ProjectReference Include="..\ITD.PerrosPerdidos.Domain\ITD.PerrosPerdidos.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="System\Data\" />
+  </ItemGroup>
+
 </Project>

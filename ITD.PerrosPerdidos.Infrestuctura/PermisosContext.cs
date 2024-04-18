@@ -1,3 +1,6 @@
+using Dapper;
+using ITD.PerrosPerdidos.Domain.DTO.DATA;
+using ITD.PerrosPerdidos.Infrestuctura.Repostory.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +11,8 @@ namespace ITD.PerrosPerdidos.Infraestructura
   public class PermisosContext : IPermisosContext
   {
     public ErrorData _errorData {get;set;}
-    private readonly BdConext _bd;
-    public PermisosContext(BdConext bd)
+    private readonly BdContext _bd;
+    public PermisosContext(BdContext bd)
     {
       _bd = bd;
     }
