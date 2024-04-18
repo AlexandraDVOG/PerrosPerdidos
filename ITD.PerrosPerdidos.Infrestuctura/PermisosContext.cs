@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ITD.PerrosPerdidos.Infraestructura
 {
-  public class PermisosContext
+  public class PermisosContext : IPermisosContext
   {
     public ErrorData _errorData {get;set;}
     private readonly BdConext _bd;
