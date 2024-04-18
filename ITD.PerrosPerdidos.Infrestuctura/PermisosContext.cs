@@ -12,6 +12,6 @@ namespace ITD.PerrosPerdidos.Infraestructura
     {
       _bd = bd;
     }
-    public async Task<EntityResultConext>Post()
+    public async Task<EntityResultConext>Post(PermisosPostData post)
   }
 }
