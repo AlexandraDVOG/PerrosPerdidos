@@ -7,7 +7,7 @@ namespace ITD.PerrosPerdidos.Infraestructura
 {
   public class PermisosContext
   {
-    public ErrorData ErrorData {get;set;}
+    public ErrorData _errorData {get;set;}
     private readonly BdConext _bd;
     public PermisosContext(BdConext bd)
     {
@@ -21,8 +21,16 @@ namespace ITD.PerrosPerdidos.Infraestructura
       dpr.Add("@areas", post.data.areas, System.Data.BdType.Boolean, System.Data.ParameterDirection.Input);
 
       var result await _bd.ExecuteStoredProcedureQueryFirstOrDefault<EntityResultContext>("Permisos_Post",dpr);
-      return result.code == 201 ? result : null;
-      
+      if (result.code == 201)
+        return result;
+      else
+      {
+        _errorData.code = result.code.ToString();
+        _errorData.detail = result.result;
+        _errorData.title = "todo se derrumbo";
+        _errorData.status = result.code;
+        return null;
+      }
     }
   }
 }
