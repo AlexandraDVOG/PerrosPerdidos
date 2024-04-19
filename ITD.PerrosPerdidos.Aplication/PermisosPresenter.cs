@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITD.PerrosPerdidos.Aplication.Presenters
 {
-  public class PermisosPresenter
+  public class PermisosPresenter : IPermisosPresenter
   {
     public ErrorResponse _errorResponse {get;set}
     private readonly ISimulacionContextRepository _repo;
