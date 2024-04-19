@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ITD.PerrosPerdidos.API\ITD.PerrosPerdidos.API.csproj" />
+    <ProjectReference Include="..\ITD.PerrosPerdidos.Aplication\ITD.PerrosPerdidos.Aplication.csproj" />
     <ProjectReference Include="..\ITD.PerrosPerdidos.Domain\ITD.PerrosPerdidos.Domain.csproj" />
   </ItemGroup>
 

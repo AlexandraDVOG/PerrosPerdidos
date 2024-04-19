@@ -1,5 +1,6 @@
 ﻿using ITD.PerrosPerdidos.Infraestructura;
 using ITD.PerrosPerdidos.Infrestuctura.Repostory.ITD.PerrosPerdidos.Infrestuctura;
+using ITD.PerrosPerdidos.Aplication.Interfaces;
 using Microsoft.Extensions.Configuration;
 
 namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context

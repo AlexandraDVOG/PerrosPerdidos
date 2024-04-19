@@ -21,7 +21,7 @@ namespace ITD.PerrosPerdidos.Infrestuctura
             services.AddAuthentication("BasicAuthentication")
             .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthenticatio", null);
 
-            services.AddScoped<ISimulacionContextRepository, SimulacionContextRepository > ();
+            services.AddScoped<mas, SimulacionContextRepository > ();
             return services;
 
         }
