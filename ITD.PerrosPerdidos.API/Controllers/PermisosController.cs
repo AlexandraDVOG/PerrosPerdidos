@@ -23,7 +23,8 @@ namespace ITD.PerrosPerdidos.API.Controllers
     {
        var result = await _permisosPresenter.Post(post);
        if (result == null)
-         return BadRequest(_permisosPresenter._errorResponse);
+         return Created("www.google.com",result);
+      return BadRequest(_permisosPresenter._errorResponse);
     }
   }
 }
