@@ -8,6 +8,7 @@ namespace ITD.PerrosPerdidos.Aplication.Interfaces.Presenters
 {
   public class IPermisosPresenter
   {
+    public ErrorResponse _errorResponse{get;set;}
     public  ValueTask<PermisosResponse> Post(RequestPermisos post);
   }
 
