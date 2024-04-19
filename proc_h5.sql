@@ -1,19 +1,6 @@
-CREATE OR REPLACE PROCEDURE obtener_publicaciones_recientes(out ref_cursor refcursor)
--- Este procedimiento, llamado `obtener_publicaciones_recientes`, define un parámetro de salida `ref_cursor` de tipo `refcursor`,
--- que se utilizará para almacenar y retornar el conjunto de resultados de la consulta.
-
-LANGUAGE plpgsql
--- Especifica que el lenguaje utilizado para este procedimiento almacenado es PL/pgSQL, el lenguaje de procedimientos de PostgreSQL.
-
-AS $$
--- Inicia el bloque del cuerpo del procedimiento.
-
+DELIMITER //
+CREATE PROCEDURE obtener_publicaciones_recientes()
 BEGIN
-    -- Inicia el bloque principal de comandos del procedimiento.
-
-    OPEN ref_cursor FOR
-    -- Abre el cursor `ref_cursor` para almacenar el conjunto de resultados de la siguiente consulta.
-
     SELECT
         u.usuario, -- Selecciona el nombre de usuario del usuario que reportó la mascota perdida.
         m.raza, -- Selecciona la raza de la mascota perdida.
@@ -40,8 +27,5 @@ BEGIN
 
     LIMIT 10;
     -- Limita los resultados a las 10 publicaciones más recientes de mascotas perdidas.
-
-END;
--- Marca el final del bloque principal de comandos del procedimiento.
-$$;
--- Marca el final del cuerpo del procedimiento.
+END//
+DELIMITER ;
