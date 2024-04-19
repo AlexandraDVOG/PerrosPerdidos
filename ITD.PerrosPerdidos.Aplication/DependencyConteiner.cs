@@ -20,6 +20,7 @@ namespace ITD.PerrosPerdidos.Aplication
                 services.AddAuthentication("BasicAuthentication")
                         .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthenticatio", null);
 
+                services.AddScoped<IPermisosPresenter, PermisosPresenter>(); 
                 services.AddScoped<ISimulacionContextRepository, SimulacionContextRepository>();
                 return services;
             }
