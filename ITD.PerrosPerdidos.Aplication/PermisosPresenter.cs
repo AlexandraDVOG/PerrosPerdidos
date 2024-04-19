@@ -15,6 +15,10 @@ namespace ITD.PerrosPerdidos.Aplication.Presenters
       _errorResponse = new ErrorResponse();
       _repo = repo;
     }
+
+    [ProducesResponseType(typeof(List<AreasResponse>),(int)StatusHttp.created)]
+    [ProducesResponseType(typeof(ErrorResponse>),(int)StatusHttp.badRequest)]
+    
     public async ValueTask<PermisosResponse>Post(RequestPermisos post)
     {
       var permisos = await _repo.PermisosContext.Post(post);
