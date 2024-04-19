@@ -1,35 +1,33 @@
-CREATE OR REPLACE PROCEDURE eliminar_publicaciones_por_nombre_usuario(
-    p_id_admin INT, -- Parámetro: ID del administrador que realiza la solicitud.
-    p_nombre_usuario VARCHAR -- Parámetro: Nombre de usuario del perfil de usuario cuyas publicaciones deben eliminarse.
+DELIMITER //
+CREATE PROCEDURE eliminar_publicaciones_por_nombre_usuario(
+    IN p_id_admin INT, -- Parameter: ID of the administrator making the request.
+    IN p_nombre_usuario VARCHAR(255) -- Parameter: Username of the user profile whose posts should be deleted.
 )
---inicializar parametros 
-LANGUAGE plpgsql -- Especifica que el lenguaje utilizado para el procedimiento es PL/pgSQL.
-AS $$
-DECLARE
-    v_es_admin BOOLEAN := FALSE; -- Variable local para verificar si el solicitante es un administrador.
-    v_id_usuario INT; -- Variable local para almacenar el ID del usuario basado en el nombre de usuario proporcionado.
 BEGIN
-    -- Verificar si el solicitante es un administrador comparando el ID proporcionado con los registros en la tabla 'Administradores'.
-   -- SELECT EXISTS(SELECT 1 FROM Administradores WHERE ID_Administrador = p_id_admin) INTO v_es_admin;
+    DECLARE v_es_admin BOOLEAN DEFAULT FALSE; -- Local variable to check if the requester is an administrator.
+    DECLARE v_id_usuario INT; -- Local variable to store the user ID based on the provided username.
+
+    -- Verify if the requester is an administrator by comparing the provided ID with the records in the 'Administradores' table.
+    -- SELECT EXISTS(SELECT 1 FROM Administradores WHERE ID_Administrador = p_id_admin) INTO v_es_admin;
     
-   -- IF NOT v_es_admin THEN -- Si el solicitante no es un administrador, se lanza una excepción.
-     --   RAISE EXCEPTION 'El usuario que realiza la solicitud no tiene privilegios de administrador.';
-    --END IF;
+    -- IF NOT v_es_admin THEN -- If the requester is not an administrator, an exception is thrown.
+    --    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The user making the request does not have administrator privileges.';
+    -- END IF;
     
-    -- Buscar el ID del usuario basado en el nombre de usuario proporcionado en la tabla 'USUARIO'.
+    -- Search for the user ID based on the provided username in the 'USUARIO' table.
     SELECT ID_USUARIO INTO v_id_usuario FROM USUARIO WHERE USUARIO = p_nombre_usuario;
     
-    IF NOT FOUND THEN -- Si no se encuentra el usuario especificado, se lanza una excepción.
-        RAISE EXCEPTION 'No se encontró el usuario especificado.';
+    IF v_id_usuario IS NULL THEN -- If the specified user is not found, an exception is thrown.
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The specified user was not found.';
     ELSE
-        -- Eliminar todas las publicaciones asociadas al usuario. Esto se hace buscando todas las publicaciones cuyo 'ID_MASCOTA'
-        -- esté vinculado a mascotas perdidas ('MASCOTAPERDIDA') que, a su vez, están asociadas con el 'ID_USUARIO' encontrado.
+        -- Delete all posts associated with the user. This is done by searching for all posts whose 'ID_MASCOTA'
+        -- is linked to lost pets ('MASCOTAPERDIDA') which, in turn, are associated with the found 'ID_USUARIO'.
         DELETE FROM PUBLICACION WHERE ID_MASCOTA IN (
             SELECT ID_MASCOTA FROM MASCOTAPERDIDA WHERE ID_USUARIO = v_id_usuario
         );
         
-        -- Emitir un aviso indicando que las publicaciones asociadas han sido eliminadas correctamente.
-        RAISE NOTICE 'Todas las publicaciones asociadas al nombre de usuario % han sido eliminadas.', p_nombre_usuario;
+        -- Emit a notice indicating that the associated posts have been successfully deleted.
+        SELECT CONCAT('All posts associated with the username ', p_nombre_usuario, ' have been deleted.') AS notice;
     END IF;
-END;
-$$;
+END //
+DELIMITER ;
