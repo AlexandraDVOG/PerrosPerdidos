@@ -22,6 +22,7 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddEndpointsApiExplorer();
+//builder.Services.addInfrestructure(builder.Configuration);
 
 
 builder.Services.AddSwaggerGen(options =>
@@ -49,7 +50,6 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
-builder.Services.AddInfrestucture(builder.Configuration);
 
 
 

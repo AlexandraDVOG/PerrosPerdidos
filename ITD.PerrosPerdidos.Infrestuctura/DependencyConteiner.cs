@@ -12,7 +12,7 @@ namespace ITD.PerrosPerdidos.Infrestuctura
         {
             
 
-            services.AddScoped<ISimulacionContextRepository, SimulacionContextRepository > ();
+            services.AddScoped<IAdministradorRepositoryContext, AdministradorRepostoryContext>();
             return services;
 
         }

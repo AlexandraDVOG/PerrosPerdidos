@@ -1,4 +1,5 @@
-﻿using ITD.PerrosPerdidos.Domain.DTO.Requests;
+﻿using ITD.PerrosPerdidos.Domain.DTO.DATA;
+using ITD.PerrosPerdidos.Domain.DTO.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace ITD.PerrosPerdidos.Aplication.Interfaces.Presenters
 {
     public interface IAdministradorPresenter
     {
-        Task Administrador_GETAsync(string telefono);
+        public Task<AdministradorData> Administrador_GETAsync(string usuario);
 
         public List<Administrador> GetAdministrador()
         {

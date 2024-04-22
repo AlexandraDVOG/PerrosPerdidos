@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITD.PerrosPerdidos.Domain.POCOS.Context
 {
-    internal class EntityResultContext
+    public class EntityResultContext
     {
         public string result { get; set; }
         public int code { get; set; }
