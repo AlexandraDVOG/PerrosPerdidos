@@ -1,3 +1,11 @@
+using ITD.PerrosPerdidos.Aplication.Interfaces;
+using ITD.PerrosPerdidos.Aplication.Interfaces.Presenters;
+using ITD.PerrosPerdidos.Domain.DTO.DATA;
+using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
+using ITD.PerrosPerdidos.Domain.DTO.Response;
+using Microsoft.AspNetCore.Mvc;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;

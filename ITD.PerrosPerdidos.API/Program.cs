@@ -1,12 +1,5 @@
 using Microsoft.OpenApi.Models;
-using ITD.PerrosPerdidos.Aplication.Interfaces.Presenters;
-using ITD.PerrosPerdidos.Domain.DTO.Requests;
-using System.Text.Json;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+
 
 
 
@@ -56,12 +49,12 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddInfrestucture(builder.Configuration);
 
 
 
 
-builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddApl
 
 
 

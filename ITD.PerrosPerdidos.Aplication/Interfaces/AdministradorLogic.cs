@@ -1,13 +1,6 @@
 ﻿using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes;
-using ITD.PerrosPerdidos.Domain.POCOS;
-using ITD.PerrosPerdidos.Domain.POCOS.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ITD.PerrosPerdidos.Infrestuctura.Repostory.Context;
+
 
 namespace ITD.PerrosPerdidos.Aplication.Interfaces
 {

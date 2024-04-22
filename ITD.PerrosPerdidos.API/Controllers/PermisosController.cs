@@ -1,3 +1,5 @@
+using ITD.PerrosPerdidos.Aplication.Interfaces.Presenters;
+using ITD.PerrosPerdidos.Domain.DTO.Response;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +14,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
   public class PermisosController : ControllerBase
   {
     private readonly IPermisosPresenter _permisosPresenter;
-    public class PermisosController(IPermisosPresenter permisosPresenter)
+    public class PermisosController (IPermisosPresenter permisosPresenter)
     {  
       _permisosPresenter = permisosPresenter; 
     }

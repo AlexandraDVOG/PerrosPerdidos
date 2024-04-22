@@ -12,21 +12,22 @@ namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
     {
         public AdministradorRepostoryContext()
         {
-
         }
-        public List<AdministradorAtributes> GetAdministrador()
-        {
-            List<AdministradorContext> Administrador new();
-            Administrador.Add(new AdministradorContext)
-            {
 
+        private static List<AdministradorAtributes> GetAdministradores()
+        {
+            // Crear una lista para almacenar los administradores
+            List<AdministradorAtributes> administradores = new List<AdministradorAtributes>();
+
+            // Crear y agregar un nuevo administrador a la lista
+            administradores.Add(new AdministradorAtributes
+            {
                 usuario = "admin",
                 contraseña = "password",
-                telefono = 6181738095
-
-
+                telefono = 6181738095,
             });
-            return administrador;
+
+            return administradores;
         }
     }
 }

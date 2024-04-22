@@ -1,3 +1,4 @@
+using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

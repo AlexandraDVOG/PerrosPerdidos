@@ -12,4 +12,5 @@ namespace ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes
         public int? numero_celular { get; set; }
         public string contraseña { get; set; }
     }
+    
 }
