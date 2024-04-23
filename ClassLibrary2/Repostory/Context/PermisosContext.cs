@@ -1,12 +1,10 @@
 using Dapper;
 using ITD.PerrosPerdidos.Aplication.Interfaces;
 using ITD.PerrosPerdidos.Domain.DTO.DATA;
-using ITD.PerrosPerdidos.Domain.DTO.Requests.Permisos;
+using ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes;
 using ITD.PerrosPerdidos.Domain.POCOS.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ITD.PerrosPerdidos.Infrestructura.Services;
+
 
 namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
 {
@@ -25,7 +23,7 @@ namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
             dpr.Add("@niveles", post.data.niveles, System.Data.BdType.Boolean, System.Data.ParameterDirection.Input);
             dpr.Add("@areas", post.data.areas, System.Data.BdType.Boolean, System.Data.ParameterDirection.Input);
 
-            var result await _bd.ExecuteStoredProcedureQueryFirstOrDefault<EntityResultContext>("Permisos_Post", dpr);
+            var result = await _bd.ExecuteStoredProcedureQueryFirstOrDefault<EntityResultContext>("Permisos_Post", dpr);
             if (result.code == 201)
                 return result;
             else

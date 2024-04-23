@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary2\ITD.PerrosPerdidos.Infrestructura.csproj" />
     <ProjectReference Include="..\ITD.PerrosPerdidos.Application\ITD.PerrosPerdidos.Application.csproj" />
+    <ProjectReference Include="..\ITD.PerrosPerdidos.Domain\ITD.PerrosPerdidos.Domain.csproj" />
   </ItemGroup>
 
 </Project>

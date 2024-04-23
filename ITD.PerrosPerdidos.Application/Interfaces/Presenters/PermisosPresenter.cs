@@ -1,21 +1,16 @@
-using ITD.PerrosPerdidos.Aplication.Interfaces;
+
 using ITD.PerrosPerdidos.Domain.DTO.DATA;
-using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
+using ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes;
+using ITD.PerrosPerdidos.Domain.DTO.Requests;
 using ITD.PerrosPerdidos.Domain.DTO.Response;
 using Microsoft.AspNetCore.Mvc;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ITD.PerrosPerdidos.Aplication.Interfaces.Presenters
 {
     public class PermisosPresenter : IPermisosPresenter
     {
-        public ErrorResponse _errorResponse { get; set}
+        public ErrorResponse _errorResponse { get; set; }
         private readonly IAdministradorRepositoryContext _repo;
         PermisosPresenter(IAdministradorRepositoryContext repo)
         {
@@ -24,7 +19,7 @@ namespace ITD.PerrosPerdidos.Aplication.Interfaces.Presenters
         }
 
         [ProducesResponseType(typeof(List<AreasResponse>), (int)StatusHttp.created)]
-        [ProducesResponseType(typeof(ErrorResponse>),(int) StatusHttp.badRequest)]
+        [ProducesResponseType(typeof(ErrorResponse),(int) StatusHttp.badRequest)]
     
     public async ValueTask<PermisosResponse> Post(RequestPermisos post)
         {

@@ -1,12 +1,8 @@
 ﻿using Dapper;
 using ITD.PerrosPerdidos.Aplication.Interfaces.Context;
-using ITD.PerrosPerdidos.Infrestuctura.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static ITD.PerrosPerdidos.Infrestuctura.Repostory.Context.MascotasPerdidasContext;
+using ITD.PerrosPerdidos.Infrestructura.Services;
+using System.Data;
+
 
 namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
 {
@@ -19,11 +15,11 @@ namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
             _BdContext = BdContext;
             }
 
-            public async Task<List<MascotasPerdidasContext>> Get(string numero_celular)
+            public async Task<List<MascotasPerdidasContext>> Get(string celular)
             {
-            // DynamicParameters dp = new DynamicParameters();
-            //dp.Add("@numero_celular", numero_celular, System.DataMisalignedException.DbType.String);
-            var result = await _BdContext.ExecuteStoredProcedureQuery<MascotasPerdidasContext>("obtener_publicaciones_recientes", null);
+            DynamicParameters dp = new DynamicParameters();
+            dp.Add("@celular", celular,DbType.String, ParameterDirection.Input);
+            var result = await _BdContext.ExecuteStoredProcedureQuery<MascotasPerdidasContext>("ver_administradores", null);
                 List < MascotasPerdidasContext > MascotasPerdidasContext = result.ToList();
                 if (MascotasPerdidasContext.Count > 0)
                 {

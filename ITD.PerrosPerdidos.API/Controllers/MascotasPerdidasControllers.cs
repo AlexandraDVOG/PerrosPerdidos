@@ -1,4 +1,5 @@
 ﻿
+using ITD.PerrosPerdidos.Aplication.Interfaces.Presenters;
 using ITD.PerrosPerdidos.Domain.DTO.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
     {
         
 
-        private readonly IMascotasPerdidasPresenters _mascotasPerdidas;
+        private readonly IMascotasPerdidasPresenter _mascotasPerdidas;
 
         public MascotasPerdidasControllers(IMascotasPerdidasPresenters mascotasPerdidas)
         {

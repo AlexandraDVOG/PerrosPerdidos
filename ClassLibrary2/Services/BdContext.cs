@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 
-namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
+namespace ITD.PerrosPerdidos.Infrestructura.Services
 {
     public class BdContext
     {
@@ -36,9 +36,9 @@ namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
             using (var Connection = CreateConnection())
             {
                 _dbConnection = Connection;
-               return await Connection.QuerySingleOrDefaultAsync<T>(storedProcedure,
-                parameters, 
-                commandType: CommandType.StoredProcedure);
+                return await Connection.QuerySingleOrDefaultAsync<T>(storedProcedure,
+                 parameters,
+                 commandType: CommandType.StoredProcedure);
             }
         }
 

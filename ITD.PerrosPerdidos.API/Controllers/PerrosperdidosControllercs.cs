@@ -1,10 +1,9 @@
-﻿using ITD.PerrosPerdidos.Aplication.Interfaces.Presenters;
-using ITD.PerrosPerdidos.Domain.DTO.Requests;
-using Microsoft.AspNetCore.Authorization;
+﻿using ITD.PerrosPerdidos.Aplication.Interfaces;
+
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
+
 using System.Net.Mime;
-using System.Threading.Tasks;
+
 
 namespace ITD.PerrosPerdidos.API.Controllers
 
@@ -21,9 +20,10 @@ namespace ITD.PerrosPerdidos.API.Controllers
 
 
 
-        publicPerrosPerdidosControllercs(AdministradorLogic administrador)
+        public PerrosPerdidosControllercs(AdministradorLogic administrador)
         {
             _administrador = administrador;
+            
         }
 
         [HttpGet]
