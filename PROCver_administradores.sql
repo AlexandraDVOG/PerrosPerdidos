@@ -1,41 +1,19 @@
-CREATE DATABASE IF NOT EXISTS PERROPERDIDO;
+-- Procedimiento almacenado para buscar un usuario como administrador usando el número de celular
+DELIMITER //
+CREATE PROCEDURE ver_administradores(IN p_celular BIGINT)
+BEGIN
+    -- Declarar una variable para verificar si el usuario es un administrador
+    DECLARE isAdmin INT;
 
--- Creación de la tabla administradores (si no existe)
-CREATE TABLE IF NOT EXISTS administradores (
-    id_administrador INT PRIMARY KEY,
-    usuario VARCHAR(255),
-    celular BIGINT,
-    contraseña VARCHAR(255)
-);
+    -- Verificar si el usuario que realiza la solicitud es un administrador
+    SELECT COUNT(*) INTO isAdmin FROM administradores WHERE celular = p_celular;
 
--- ALTER TABLE administradores MODIFY telefono BIGINT;
-
--- Creación de la tabla usuario (si no existe)
-CREATE TABLE IF NOT EXISTS usuario (
-    id_usuario INT PRIMARY KEY,
-    numero_celular VARCHAR(20),
-    contraseña VARCHAR(255),
-    usuario VARCHAR(255)
-);
-
--- Creación de la tabla publicacion (si no existe)
-CREATE TABLE IF NOT EXISTS publicacion (
-    id_publicacion INT PRIMARY KEY,
-    id_mascota INT,
-    fecha_publicacion TIMESTAMP
-);
-
--- Creación de la tabla mascotaperdida (si no existe)
-CREATE TABLE IF NOT EXISTS mascotaperdida (
-    id_mascota INT PRIMARY KEY,
-    id_usuario INT,
-    raza VARCHAR(100),
-    color VARCHAR(50),
-    tamaño VARCHAR(20),
-    sexo CHAR(1),
-    celular BIGINT,
-    id_ubicacion VARCHAR(255),
-    imagen BLOB
-);
-
--- ALTER TABLE mascotaperdida MODIFY celular BIGINT;
+    -- Si el usuario es un administrador, buscar la información del usuario solicitado
+    IF isAdmin > 0 THEN
+        SELECT * FROM usuario WHERE numero_celular = p_celular;
+    ELSE
+        -- Si el usuario no es un administrador, lanzar un error
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Unauthorized: The user making the request does not have administrator privileges to access this information.';
+    END IF;
+END //
+DELIMITER ;
