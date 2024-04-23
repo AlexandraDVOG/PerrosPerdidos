@@ -10,12 +10,12 @@ namespace ITD.PerrosPerdidos.Aplication
         {
             public static IServiceCollection AddAplication(this IServiceCollection services, IConfiguration configuration)
             {
-         
 
-                
-                services.AddScoped<ISimulacionContextRepository, SimulacionContextRepository>();
-                return services;
-            }
+
+
+            
+            return services;
+        }
             
         }
     }

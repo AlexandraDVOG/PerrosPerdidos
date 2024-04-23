@@ -8,7 +8,7 @@ namespace ITD.PerrosPerdidos.Infrestuctura
 {
     public static class DependencyConteiner
     {
-        public static   IServiceCollection AddInfrestucture(this IServiceCollection services, IConfiguration configuration)
+        public static   IServiceCollection AddInfrestructura(this IServiceCollection services, IConfiguration configuration)
         {
             
 

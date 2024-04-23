@@ -7,12 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITD.PerrosPerdidos.API", "I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITD.PerrosPerdidos.Domain", "ITD.PerrosPerdidos.Domain\ITD.PerrosPerdidos.Domain.csproj", "{1F5B8FD5-0985-42BD-BD65-6EA4A8047694}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITD.PerrosPerdidos.Infrestuctura", "ITD.PerrosPerdidos.Infrestuctura\ITD.PerrosPerdidos.Infrestuctura.csproj", "{AA11A589-8C7D-4195-B99B-E1ED1F80D0F4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D88C7F41-88B0-4C69-A727-47E9DD5DC051} = {D88C7F41-88B0-4C69-A727-47E9DD5DC051}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITD.PerrosPerdidos.Infrestructura", "ClassLibrary2\ITD.PerrosPerdidos.Infrestructura.csproj", "{A0B70857-E466-4E27-985B-0643714EE7B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITD.PerrosPerdidos.Aplication", "ITD.PerrosPerdidos.Aplication\ITD.PerrosPerdidos.Aplication.csproj", "{E97BDCAA-47FA-40A6-BD8E-911453E1CC0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITD.PerrosPerdidos.Application", "ITD.PerrosPerdidos.Application\ITD.PerrosPerdidos.Application.csproj", "{2ED63A4D-868E-458D-B187-DDC18011C810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,14 +25,14 @@ Global
 		{1F5B8FD5-0985-42BD-BD65-6EA4A8047694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F5B8FD5-0985-42BD-BD65-6EA4A8047694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F5B8FD5-0985-42BD-BD65-6EA4A8047694}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA11A589-8C7D-4195-B99B-E1ED1F80D0F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA11A589-8C7D-4195-B99B-E1ED1F80D0F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA11A589-8C7D-4195-B99B-E1ED1F80D0F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA11A589-8C7D-4195-B99B-E1ED1F80D0F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E97BDCAA-47FA-40A6-BD8E-911453E1CC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E97BDCAA-47FA-40A6-BD8E-911453E1CC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E97BDCAA-47FA-40A6-BD8E-911453E1CC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E97BDCAA-47FA-40A6-BD8E-911453E1CC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B70857-E466-4E27-985B-0643714EE7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B70857-E466-4E27-985B-0643714EE7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B70857-E466-4E27-985B-0643714EE7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B70857-E466-4E27-985B-0643714EE7B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ED63A4D-868E-458D-B187-DDC18011C810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED63A4D-868E-458D-B187-DDC18011C810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED63A4D-868E-458D-B187-DDC18011C810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED63A4D-868E-458D-B187-DDC18011C810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

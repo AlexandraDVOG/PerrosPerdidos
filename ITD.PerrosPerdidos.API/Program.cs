@@ -1,3 +1,5 @@
+using ITD.PerrosPerdidos.Aplication;
+using ITD.PerrosPerdidos.Infrestuctura;
 using Microsoft.OpenApi.Models;
 
 
@@ -23,6 +25,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.addInfrestructure(builder.Configuration);
+builder.Services.AddInfrestructura(builder.Configuration);
+builder.Services.AddAplication(builder.Configuration);
 
 
 builder.Services.AddSwaggerGen(options =>
@@ -54,7 +58,7 @@ builder.Services.AddSwaggerGen(options =>
 
 
 
-builder.Services.AddApl
+
 
 
 
