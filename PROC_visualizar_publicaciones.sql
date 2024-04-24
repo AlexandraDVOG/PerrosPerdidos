@@ -1,6 +1,12 @@
 DELIMITER //
 CREATE PROCEDURE obtener_publicaciones_recientes()
 BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- Resignal the caught exception
+        RESIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = '500 Internal Server Error: Se produjo un error interno en el servidor al procesar la solicitud.';
+    END;
+
     SELECT
         u.usuario, -- Selecciona el nombre de usuario del usuario que reportó la mascota perdida.
         m.raza, -- Selecciona la raza de la mascota perdida.
