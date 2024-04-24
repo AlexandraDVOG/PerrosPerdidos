@@ -29,7 +29,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
         [Consumes(MediaTypeNames.Application.Json)]
-        public async Task<IActionResult> Get(string nombre, string telefono)
+        public async Task<IActionResult> Get(string telefono)
         {
             var result = await _administrador.Usuarios_GETAsync(telefono);
             if (_administrador._error.Count > 0)
