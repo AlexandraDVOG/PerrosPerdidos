@@ -25,7 +25,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces.Presenters
             var permisos = await _repo.PermisosContext.Post(post);
             if (permisos.code = 201)
                 return new PermisosResponse() { data = new PermisosData() { attributes = new PermisosAttributes() { mensaje = permisos.result }, type = "permisos" } };
-            _errorResponse.errors = new List<ErrorData>() { new ErrorData() { code = permisos.code.ToString(), detail = permisos.result, status = permisos.code, title = "todo se derrumbo" } };
+            _errorResponse.errors = new List<ErrorData>() { new ErrorData() { code = permisos.code.ToString(), detail = permisos.result, status = permisos.code, title = "Mejor date de baja" } };
             return null;
         }
     }
