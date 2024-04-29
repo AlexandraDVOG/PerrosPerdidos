@@ -1,11 +1,7 @@
-﻿using ITD.PerrosPerdidos.Application.Interfaces.Presenters;
+﻿
 using ITD.PerrosPerdidos.Application.Presenter;
-using ITD.PerrosPerdidos.Domain.DTO.Requests;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Net.Mime;
-using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

@@ -1,9 +1,7 @@
-  using ITD.PerrosPerdidos.Application.Interfaces.Presenters;
+
 using ITD.PerrosPerdidos.Domain.Enums;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Mime;
-using System.Threading.Tasks;
+
 
 namespace ITD.PerrosPerdidos.API.Controllers
 {
