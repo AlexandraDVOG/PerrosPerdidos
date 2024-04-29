@@ -17,7 +17,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces.Presenters
             _repo = repo;
         }
 
-        [ProducesResponseType(typeof(List<AreasResponse>), (int)StatusHttp.created)]
+        [ProducesResponseType(typeof(List<AreasResponse>), (int)StatusHttp.Created)]
         [ProducesResponseType(typeof(ErrorResponse), (int)StatusHttp.badRequest)]
 
         public async ValueTask<PermisosResponse> Post(RequestPermisos post)

@@ -1,5 +1,6 @@
 using Dapper;
 using ITD.PerrosPerdidos.Application.Interfaces;
+using ITD.PerrosPerdidos.Application.Interfaces.Context;
 using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.POCOS.Context;
 using ITD.PerrosPerdidos.Infrestructura.Services;

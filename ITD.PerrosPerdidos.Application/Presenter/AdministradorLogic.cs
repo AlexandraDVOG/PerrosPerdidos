@@ -11,9 +11,9 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
     public class AdministradorLogic : IAdministradorPresenter
     {
         public List<string> _error { get; set; }
-        private readonly AdministradorRepositoryContext _administradorRepository;
+        private readonly IAdministradorRepositoryContext _administradorRepository;
 
-        public AdministradorLogic(AdministradorRepositoryContext administradorRepository)
+        public AdministradorLogic(IAdministradorRepositoryContext administradorRepository)
         {
             _error = new List<string>();
             _administradorRepository = administradorRepository;
@@ -31,7 +31,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
                 return null;
             }
             List<AdministradorAtributes> administradorAttributes = new();
-            var result = await _administradorRepository.AdministradorContext.Get(usuario);
+            var result = await _administradorRepository.administradorContext.Get(usuario);
 
             List<Administrador> administradores = result.ToList();
             if (administradores.Count > 0 && administradores[0].code == 200)

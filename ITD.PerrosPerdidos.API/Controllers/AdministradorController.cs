@@ -44,43 +44,46 @@ namespace ITD.PerrosPerdidos.API.Controllers
             else
             {
                 return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
-        }
+            }
 
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Administrador_POST> patchDoc)
-        {
-            if (patchDoc != null)
+            [HttpPatch("{id}")]
+            public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Administrador_POST> patchDoc)
             {
-                var administrador = await _administradorPresenter.GetAdministradorByIdAsync(id);
-
-                if (administrador == null)
+                if (patchDoc != null)
                 {
-                    return NotFound();
+                    var administrador = await _administradorPresenter.GetAdministradorByIdAsync(id);
+
+                    if (administrador == null)
+                    {
+                        return NotFound();
+                    }
+
+                    patchDoc.ApplyTo(administrador, ModelState);
+
+                    if (!ModelState.IsValid)
+                    {
+                        return BadRequest(ModelState);
+                    }
+
+                    bool result = await _administradorPresenter.UpdateAdministradorAsync(administrador);
+
+                    if (!result)
+                    {
+                        return BadRequest("Error al actualizar el administrador");
+                    }
+
+                    return new ObjectResult(administrador);
                 }
-
-                patchDoc.ApplyTo(administrador, ModelState);
-
-                if (!ModelState.IsValid)
+                else
                 {
                     return BadRequest(ModelState);
                 }
-
-                bool result = await _administradorPresenter.UpdateAdministradorAsync(administrador);
-
-                if (!result)
-                {
-                    return BadRequest("Error al actualizar el administrador");
-                }
-
-                return new ObjectResult(administrador);
-            }
-            else
-            {
-                return BadRequest(ModelState);
             }
         }
     }
 }
+
+
 
 
 /*using ITD.PerrosPerdidos.Application.Interfaces.Presenters;
