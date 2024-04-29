@@ -3,7 +3,7 @@
 using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.POCOS.Context;
 
-namespace ITD.PerrosPerdidos.Application.Interfaces
+namespace ITD.PerrosPerdidos.Application.Interfaces.Context
 {
     public interface IPermisosContext
     {

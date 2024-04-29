@@ -1,6 +1,6 @@
 ﻿
 using ITD.PerrosPerdidos.Application.Interfaces;
-using ITD.PerrosPerdidos.Domain.DTO.Requests;
+
 using ITD.PerrosPerdidos.Infrastructure.Repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,5 +1,5 @@
 ﻿using ITD.PerrosPerdidos.Application.Interfaces.Context;
-using ITD.PerrosPerdidos.Application.Interfaces.Presenters;
+
 using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
@@ -56,7 +56,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
 
         public async Task<EntityResultContext> PostAdministrador(Administrador_POST request)
         {
-            var result = await _administradorRepository.AdministradorContext.Post(request);
+            var result = await _administradorRepository.administradorContext.Post(request);
             if (result.code == 201) { return result; }
             else
             {

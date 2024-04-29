@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
+
 
 namespace ITD.PerrosPerdidos.Application.Interfaces.Context
 {
     public interface IAdministradorPresenter
     {
+    }
+    public interface IAdministradorService
+    {
+        Task<Administrador_POST> PostAdministrador(Administrador_POST administrador);
     }
 }

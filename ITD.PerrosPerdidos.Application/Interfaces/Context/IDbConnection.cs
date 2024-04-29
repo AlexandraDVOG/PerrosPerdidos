@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ITD.PerrosPerdidos.Application.Interfaces.Presenters
+
+namespace ITD.PerrosPerdidos.Application.Interfaces.Context
 {
     public interface IDbConnection
     {

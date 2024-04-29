@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using ITD.PerrosPerdidos.Aplication.Interfaces.Context;
 using ITD.PerrosPerdidos.Application.Interfaces.Context;
 using ITD.PerrosPerdidos.Infrestructura.Services;
 using System.Data;
@@ -36,6 +35,11 @@ namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
         {
             var result = await _BdContext.ExecuteStoredProcedureQuery<MascotasPerdidasContext>("obtener_publicaciones_recientes", null);
             return result.ToList();
+        }
+
+        public Task<bool> DeleteUsuarioAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
