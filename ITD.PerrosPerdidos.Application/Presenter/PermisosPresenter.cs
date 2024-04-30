@@ -4,6 +4,7 @@ using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
 using ITD.PerrosPerdidos.Domain.Enums;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace ITD.PerrosPerdidos.Application.Interfaces.Presenters

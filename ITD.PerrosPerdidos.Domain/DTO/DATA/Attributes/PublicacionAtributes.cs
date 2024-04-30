@@ -8,7 +8,7 @@ namespace ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes
 {
     public class PublicacionAtributes
     {
-        public string Fecha_Publicacion { get; set; }
+        public DateTime Fecha_Publicacion { get; set; }
 
     }
 }
