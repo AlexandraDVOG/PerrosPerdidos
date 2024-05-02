@@ -46,7 +46,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
         }
 
         [HttpPatch("{id}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<RequestPermisos> patchDoc)
+        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Domain.DTO.DATA.RequestPermisos> patchDoc)
         {
             if (patchDoc != null)
             {
@@ -57,7 +57,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
                     return NotFound();
                 }
 
-                patchDoc.ApplyTo(permiso, ModelState);
+                patchDoc.ApplyTo(permiso, (Microsoft.AspNetCore.JsonPatch.Adapters.IObjectAdapter)ModelState);
 
                 if (!ModelState.IsValid)
                 {
