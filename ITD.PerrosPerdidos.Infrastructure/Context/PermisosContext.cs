@@ -5,6 +5,7 @@ using Dapper;
 using ITD.PerrosPerdidos.Application.Interfaces;
 using ITD.PerrosPerdidos.Application.Interfaces.Context;
 using ITD.PerrosPerdidos.Domain.DTO.DATA;
+using ITD.PerrosPerdidos.Domain.DTO.Requests;
 using ITD.PerrosPerdidos.Domain.POCOS.Context;
 using ITD.PerrosPerdidos.Infrestructura.Services;
 
@@ -19,12 +20,12 @@ namespace ITD.PerrosPerdidos.Infrestucture.Repostory.Context
         {
             _bd = bd;
         }
-        public async Task<EntityResultContext> Post(RequestPermisos post)
+        public async Task<EntityResultContext> Post(AdministradorData post)
         {
             DynamicParameters dpr = new DynamicParameters();
             dpr.Add("@usuario", post.data.usuario, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            dpr.Add("@niveles", post.data.niveles, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
-            dpr.Add("@areas", post.data.areas, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
+            dpr.Add("@telefono", post.data.telefono, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
+            dpr.Add("@contraseña", post.data.contraseña, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
 
             var result = await _bd.ExecuteStoredProcedureQueryFirstOrDefault<EntityResultContext>("Permisos_Post", dpr);
             if (result.code == 201)

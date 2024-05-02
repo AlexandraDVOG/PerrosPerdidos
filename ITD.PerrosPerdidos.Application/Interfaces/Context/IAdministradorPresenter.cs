@@ -9,5 +9,6 @@ namespace ITD.PerrosPerdidos.Application.Interfaces.Context
     public interface IAdministradorService
     {
         Task<Administrador_POST> PostAdministrador(Administrador_POST administrador);
+
     }
 }
