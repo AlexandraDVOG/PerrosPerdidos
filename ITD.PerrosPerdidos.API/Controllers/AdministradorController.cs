@@ -1,6 +1,7 @@
 ﻿
 using ITD.PerrosPerdidos.Application.Interfaces.Context;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 

@@ -8,7 +8,7 @@ using ITD.PerrosPerdidos.Domain.POCOS.Context;
 
 namespace ITD.PerrosPerdidos.Application.Interfaces
 {
-    public class AdministradorLogic : IAdministradorPresenter
+    public class AdministradorLogic : IAdministradorContext
     {
         public List<string> _error { get; set; }
         private readonly IAdministradorRepositoryContext _administradorRepository;
@@ -31,7 +31,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
                 return null;
             }
             List<AdministradorAtributes> administradorAttributes = new();
-            var result = await _administradorRepository.administradorContext.Get(usuario);
+            var result = await _administradorRepository.administradorContext.   Get(usuario);
 
             List<Administrador> administradores = result.ToList();
             if (administradores.Count > 0 && administradores[0].code == 200)
