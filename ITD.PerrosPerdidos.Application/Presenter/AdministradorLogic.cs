@@ -41,7 +41,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
                     administradorAttributes.Add(new AdministradorAtributes
                     {
                         usuario = admin.usuario,
-                        celular = admin.telefono,
+                        celular = admin.celular,
                         contraseña = admin.contraseña
                     });
                 }
@@ -65,29 +65,21 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
         }
         public async Task<RequestPermisos> Usuarios_GETAsync(string telefono)
     {
-        // Aquí debes implementar la lógica para obtener los datos del usuario
-        // Este es solo un ejemplo y debes adaptarlo a tus necesidades
-        return await Task.FromResult(new RequestPermisos());
+           return await Task.FromResult(new RequestPermisos());
     }
 
     public async Task<RequestPermisos> GetPermisoByIdAsync(int id)
     {
-        // Aquí debes implementar la lógica para obtener un permiso por su ID
-        // Este es solo un ejemplo y debes adaptarlo a tus necesidades
         return await Task.FromResult(new RequestPermisos());
     }
 
     public async Task<bool> UpdatePermisoAsync(RequestPermisos permiso)
     {
-        // Aquí debes implementar la lógica para actualizar un permiso
-        // Este es solo un ejemplo y debes adaptarlo a tus necesidades
         return await Task.FromResult(true);
     }
 
     public async Task<RequestPermisos> PostAdministrador(RequestPermisos post)
     {
-        // Aquí debes implementar la lógica para crear un nuevo permiso
-        // Este es solo un ejemplo y debes adaptarlo a tus necesidades
         return await Task.FromResult(post);
     }
     }
