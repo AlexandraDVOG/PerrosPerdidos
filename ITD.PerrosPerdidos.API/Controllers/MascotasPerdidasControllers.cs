@@ -28,9 +28,9 @@ namespace ITD.PerrosPerdidos.API.Controllers
             // Lógica para eliminar el usuario con el ID proporcionado
             var result = await _mascotasPerdidas.DeleteUsuarioAsync(id);
 
-            if (_mascotasPerdidas.Errors.Count > 0)
+            if (_mascotasPerdidas._error.Count > 0)
             {
-                return BadRequest(_mascotasPerdidas.Errors);
+                return BadRequest(_mascotasPerdidas._error);
             }
 
             return result ? Ok() : NotFound(); // Si el usuario fue eliminado correctamente, devuelve Ok. De lo contrario, NotFound.

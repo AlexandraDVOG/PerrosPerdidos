@@ -8,6 +8,9 @@ namespace ITD.PerrosPerdidos.Infrestuctura.Repostory.Context
     public class MascotasPerdidasContext : IMascotasPerdidasContext
     {
         private BdContext _BdContext;
+
+        public List<string> _error { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public MascotasPerdidasContext(BdContext BdContext)
         {
             _BdContext = BdContext;

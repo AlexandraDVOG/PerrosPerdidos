@@ -1,12 +1,16 @@
 ﻿
 
+using ITD.PerrosPerdidos.Domain.DTO.DATA;
+
 namespace ITD.PerrosPerdidos.Application.Interfaces.Context
 {
     public interface IMascotasPerdidasContext
     {
-        Task<string> ModificarCaracteristicasPerroPerdido(int idMascota, string nuevasCaracteristicas);
-        Task<string> ReportarPerroPerdido(int idUsuario, int celular, string raza, string color, string tamano, char sexo, string caracteristicas, DateTime fechaVisto, string lugarVisto, byte[] imagen);
+      
+        public List<string> _error { get; set; }
+        public Task<string> ModificarCaracteristicasPerroPerdido(int idMascota, string nuevasCaracteristicas);
+        public Task<string> ReportarPerroPerdido(int idUsuario, int celular, string raza, string color, string tamano, char sexo, string caracteristicas, DateTime fechaVisto, string lugarVisto, byte[] imagen);
        
-        Task<bool> DeleteUsuarioAsync(int id);
+        public Task<bool> DeleteUsuarioAsync(int id);
     }
 }

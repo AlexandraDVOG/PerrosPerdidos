@@ -8,7 +8,7 @@ using ITD.PerrosPerdidos.Domain.POCOS.Context;
 
 namespace ITD.PerrosPerdidos.Application.Interfaces
 {
-    public class AdministradorLogic : IAdministradorContext
+    public class AdministradorLogic : IAdministradorPresenter
     {
         public List<string> _error { get; set; }
         private readonly IAdministradorRepositoryContext _administradorRepository;
@@ -31,7 +31,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
                 return null;
             }
             List<AdministradorAtributes> administradorAttributes = new();
-            var result = await _administradorRepository.administradorContext.   Get(usuario);
+            var result = await _administradorRepository.AdministradorPresenter.Get(usuario);
 
             List<Administrador> administradores = result.ToList();
             if (administradores.Count > 0 && administradores[0].code == 200)
@@ -55,7 +55,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
 
         public async Task<EntityResultContext> PostAdministrador(Administrador_POST request)
         {
-            var result = await _administradorRepository.administradorContext.Post(request);
+            var result = await _administradorRepository.AdministradorPresenter.Post(request);
             if (result.code == 201) { return result; }
             else
             {
@@ -63,6 +63,17 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
                 return null;
             }
         }
+
+        //public async Task<EntityResultContext> PostAdministrador(Administrador_POST request)
+        //{
+        //    var result = await _administradorRepository.administradorPresenter.Post(request);
+        //    if (result.code == 201) { return result; }
+        //    else
+        //    {
+        //        _error.Add(result.result);
+        //        return null;
+        //    }
+        //}
         public async Task<RequestPermisos> Usuarios_GETAsync(string telefono)
     {
            return await Task.FromResult(new RequestPermisos());
@@ -78,10 +89,21 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
         return await Task.FromResult(true);
     }
 
-    public async Task<RequestPermisos> PostAdministrador(RequestPermisos post)
-    {
-        return await Task.FromResult(post);
-    }
+       public async Task<EntityResultContext> Post(Administrador_POST request)
+        {
+            var result = await _administradorRepository.AdministradorPresenter.Post(request);
+            if (result.code == 201) { return result; }
+            else
+            {
+                _error.Add(result.result);
+                return null;
+            }
+        }
+
+        public async Task<RequestPermisos> PostAdministrador(RequestPermisos post)
+        {
+            return await Task.FromResult(post);
+        }
     }
 }
 
