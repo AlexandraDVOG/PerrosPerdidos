@@ -8,8 +8,8 @@ namespace ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes
 {
     public class Administrador_POST
     {
-        public string Usuario { get; set; }
-        public string Telefono { get; set; }
-        public long? Contrasena { get; set; }
+        public string usuario { get; set; }
+        public string celular { get; set; }
+        public long? contrasena { get; set; }
     }
 }

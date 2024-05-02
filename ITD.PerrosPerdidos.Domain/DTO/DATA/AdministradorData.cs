@@ -7,8 +7,8 @@ namespace ITD.PerrosPerdidos.Domain.DTO.DATA
     {
         public AdministradorAtributes data { get; set; }
 
-        //public int type { get; set; }
-        //public AdministradorAtributes attributes { get; set; }
+        public string type { get; set; }
+        public string attributes { get; set; }
     }
   
 }

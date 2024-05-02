@@ -22,6 +22,8 @@ namespace ITD.PerrosPerdidos.API.Controllers
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
         [Consumes(MediaTypeNames.Application.Json)]
+
+        
         public async Task<IActionResult> Get(string telefono)
         {
             var result = await _administrador.Usuarios_GETAsync(telefono);
@@ -33,7 +35,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] RequestPermisos post)
+        public async Task<IActionResult> Post([FromBody] Domain.DTO.DATA.RequestPermisos post)
         {
             var result = await _administrador.PostAdministrador(post);
             if (result != null)
