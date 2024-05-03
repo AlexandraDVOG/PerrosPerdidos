@@ -19,6 +19,23 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
             _administradorRepository = administradorRepository;
         }
 
+        public async Task<IEnumerable<Administrador>> Get(string usuario)
+        {
+            // Implementa este método.
+            throw new NotImplementedException();
+        }
+
+        public async Task<Administrador_POST> GetAdministradorByIdAsync(int id)
+        {
+            // Implementa este método.
+            throw new NotImplementedException();
+        }
+
+        public async Task<bool> UpdateAdministradorAsync(Administrador_POST administrador)
+        {
+            // Implementa este método.
+            throw new NotImplementedException();
+        }
         public async Task<AdministradorData> Administrador_GETAsync(string usuario)
         {
             if (string.IsNullOrEmpty(usuario))

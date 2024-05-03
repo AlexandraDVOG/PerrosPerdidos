@@ -22,5 +22,16 @@ namespace ITD.PerrosPerdidos.Infrastructure.Context
         {
             throw new NotImplementedException();
         }
+        public Task<Administrador_POST> GetAdministradorByIdAsync(int id)
+        {
+            // Implementa este método.
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> UpdateAdministradorAsync(Administrador_POST administrador)
+        {
+            // Implementa este método.
+            throw new NotImplementedException();
+        }
     }
 }
