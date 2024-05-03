@@ -23,7 +23,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
         [Consumes(MediaTypeNames.Application.Json)]
         public async Task<IActionResult> Get(string telefono)
         {
-            var result = await _administradorPresenter.Administrador_GETAsync(telefono);
+            var result = await _administradorPresenter.Get(telefono);
             if (_administradorPresenter._error.Count > 0)
             {
                 return BadRequest(_administradorPresenter._error);
@@ -45,19 +45,33 @@ namespace ITD.PerrosPerdidos.API.Controllers
             }
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Post([FromBody] Administrador_POST request)
-        //{
-        //    var result = await _administradorService.PostAdministrador(request);
-        //    if (result != null)
-        //    {
-        //        return Ok(new { message = "Administrador agregado exitosamente." });
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
-        //    }
-        //}
+        /*[HttpPost]
+        public async Task<IActionResult> Post([FromBody] Administrador_POST request)
+        {
+            var result = await _administradorService.PostAdministrador(request);
+            if (result != null)
+            {
+                return Ok(new { message = "Administrador agregado exitosamente." });
+            }
+            else
+            {
+                return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
+            }
+        }*/
+        [HttpPost]
+        public async Task<IActionResult> PostAdministrador([FromBody] Administrador_POST request)
+        {
+            var result = await _administradorPresenter.Post(request);
+            if (result != null)
+            {
+                return Ok(new { message = "Administrador agregado exitosamente." });
+            }
+            else
+            {
+                return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
+            }
+        }
+
 
         [HttpPatch("{id}")]
         public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Administrador_POST> patchDoc)
@@ -71,7 +85,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
                     return NotFound();
                 }
 
-                patchDoc.ApplyTo(administrador, ModelState);
+                patchDoc.ApplyTo(administrador, (Microsoft.AspNetCore.JsonPatch.Adapters.IObjectAdapter)ModelState);
 
                 if (!ModelState.IsValid)
                 {
