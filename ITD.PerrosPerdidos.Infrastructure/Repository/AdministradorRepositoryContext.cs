@@ -1,6 +1,7 @@
-﻿    
+﻿
 using ITD.PerrosPerdidos.Application.Interfaces;
 using ITD.PerrosPerdidos.Application.Interfaces.Context;
+using ITD.PerrosPerdidos.Application.Interfaces.Mapping;
 using ITD.PerrosPerdidos.Infrastructure.Context;
 using ITD.PerrosPerdidos.Infrestructura.Services;
 using ITD.PerrosPerdidos.Infrestuctura.Repostory.Context;

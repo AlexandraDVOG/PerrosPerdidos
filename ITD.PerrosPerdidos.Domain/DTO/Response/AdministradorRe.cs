@@ -1,10 +1,11 @@
 ﻿using ITD.PerrosPerdidos.Domain.DTO.DATA;
 
-
 namespace ITD.PerrosPerdidos.Domain.DTO.Requests
 {
-    public class MacotasPerdidas
+    public class AdministradorRe
     {
-        public MascotasPerdidasData data { get; set; }
+        public AdministradorData data { get; set; }
+
+
     }
 }

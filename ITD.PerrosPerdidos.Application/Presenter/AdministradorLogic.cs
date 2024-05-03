@@ -1,9 +1,10 @@
-﻿using ITD.PerrosPerdidos.Application.Interfaces.Context;
+﻿using ITD.PerrosPerdidos.Application.Interfaces.Mapping;
 using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
 using ITD.PerrosPerdidos.Domain.DTO.Requests;
 using ITD.PerrosPerdidos.Domain.POCOS.Context;
+using System.Reflection;
 
 
 namespace ITD.PerrosPerdidos.Application.Interfaces
@@ -11,101 +12,90 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
     public class AdministradorLogic : IAdministradorPresenter
     {
         public List<string> _error { get; set; }
-        private readonly IAdministradorRepositoryContext _administradorRepository;
+        public ErrorResponse _errorResponse { get; set; }
 
-        public AdministradorLogic(IAdministradorRepositoryContext administradorRepository)
+        private readonly IAdministradorRepositoryContext _eventosRepository;
+
+
+        public AdministradorLogic(IAdministradorRepositoryContext eventosRepository)
+
         {
+            _eventosRepository = eventosRepository;
             _error = new List<string>();
-            _administradorRepository = administradorRepository;
+            _errorResponse = new ErrorResponse();
+
         }
 
-        public async Task<AdministradorData> Administrador_GETAsync(string usuario)
-        {
-            if (string.IsNullOrEmpty(usuario))
-            {
-                return null;
-            }
-            if (usuario.Length < 5)
-            {
-                _error.Add("El usuario debe tener al menos 5 caracteres");
-                return null;
-            }
-            List<AdministradorAtributes> administradorAttributes = new();
-            var result = await _administradorRepository.AdministradorPresenter.Get(usuario);
 
-            List<Administrador> administradores = result.ToList();
-            if (administradores.Count > 0 && administradores[0].code == 200)
+        public async ValueTask<AdministradorRe> Get(int code, string nombre, string fecha, string hora, string ubicacion, string descripcion)
+        {
+            var eventosResult = await _eventosRepository.AdministradorPresenter.Get(code, nombre, fecha, hora, ubicacion, descripcion);
+
+            List<AdministradorAtributes> dT0s = eventosResult.Select(evento => new AdministradorAtributes
             {
-                foreach (var admin in administradores)
-                {
-                    administradorAttributes.Add(new AdministradorAtributes
-                    {
-                        usuario = admin.usuario,
-                        celular = admin.celular,
-                        contraseña = admin.contraseña
-                    });
-                }
-            }
-            return new AdministradorData
+                code = evento.code,
+                result = evento.result ?? "", // Asignar cadena vacía si result es nulo
+                nombre = evento.nombre,
+                fecha = evento.fecha,
+                hora = evento.hora,
+                ubicacion = evento.ubicacion,
+                descripcion = evento.descripcion
+            }).ToList();
+
+            AdministradorData eventData = new AdministradorData
             {
-                type = "admin",
-                attributes = administradorAttributes
+                attributes = dT0s,
+                type = "nombre"
             };
+
+            return new AdministradorRe { data = eventData };
         }
 
-        public async Task<EntityResultContext> PostAdministrador(Administrador_POST request)
+
+        public async ValueTask<AdministradorRe> Post(AdministradorRe post)
         {
-            var result = await _administradorRepository.AdministradorPresenter.Post(request);
-            if (result.code == 201) { return result; }
-            else
+            // crear response y 
+            var evento = await _eventosRepository.EventosContext.Post(post);
+            if (evento.code == 201)
+                return new AdministradorRe()
+                {
+                    data = new AdministradorData()
+                    {
+                        attributes = new List<AdministradorAtributes>
+                        {
+            new AdministradorAtributes { result = evento.result }
+        },
+                        type = "eventos"
+                    }
+                };
+            _errorResponse.errors = new List<ErrorData>() { new ErrorData() { code = evento.code, detail = evento.result, status = evento.nombre, title = "Todo se derrumbo" } };
+            return null;
+        }
+
+        public async Task<AdministradorRe> Patch(int id, PatchEventosRequest patch)
+        {
+            if (id <= 0)
             {
-                _error.Add(result.result);
+                _errorResponse.errors = new List<ErrorData>() { new ErrorData() { code = 400, detail = "ID de usuario no válido", status = "400", title = "Error" } };
                 return null;
             }
-        }
 
-        //public async Task<EntityResultContext> PostAdministrador(Administrador_POST request)
-        //{
-        //    var result = await _administradorRepository.administradorPresenter.Post(request);
-        //    if (result.code == 201) { return result; }
-        //    else
-        //    {
-        //        _error.Add(result.result);
-        //        return null;
-        //    }
-        //}
-        public async Task<RequestPermisos> Usuarios_GETAsync(string telefono)
-    {
-           return await Task.FromResult(new RequestPermisos());
-    }
-
-    public async Task<RequestPermisos> GetPermisoByIdAsync(int id)
-    {
-        return await Task.FromResult(new RequestPermisos());
-    }
-
-    public async Task<bool> UpdatePermisoAsync(RequestPermisos permiso)
-    {
-        return await Task.FromResult(true);
-    }
-
-       public async Task<EntityResultContext> Post(Administrador_POST request)
-        {
-            var result = await _administradorRepository.AdministradorPresenter.Post(request);
-            if (result.code == 201) { return result; }
-            else
+            if (patch == null || patch.data == null)
             {
-                _error.Add(result.result);
+                _errorResponse.errors = new List<ErrorData>() { new ErrorData() { code = 400, detail = "Los datos son nulos", status = "400", title = "Error" } };
                 return null;
             }
-        }
 
-        public async Task<RequestPermisos> PostAdministrador(RequestPermisos post)
-        {
-            return await Task.FromResult(post);
+
+            var result = await _eventosRepository.EventosContext.Patch(patch);
+
+            if (result == null)
+            {
+                _errorResponse.errors = new List<ErrorData>() { new ErrorData() { code = 500, detail = "Error al procesar la solicitud", status = "500", title = "Error" } };
+                return null;
+            }
+
+            return new AdministradorRe() { data = new AdministradorData() { attributes = new List<AdministradorAtributes>() { new() { result = result.result } }, type = "eventos" } };
         }
     }
 }
-
-
-

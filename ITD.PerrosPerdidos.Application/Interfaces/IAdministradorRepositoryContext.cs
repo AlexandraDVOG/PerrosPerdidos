@@ -1,4 +1,5 @@
 ﻿using ITD.PerrosPerdidos.Application.Interfaces.Context;
+using ITD.PerrosPerdidos.Application.Interfaces.Mapping;
 
 
 namespace ITD.PerrosPerdidos.Application.Interfaces

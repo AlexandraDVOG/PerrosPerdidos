@@ -1,9 +1,10 @@
 ﻿
-using ITD.PerrosPerdidos.Application.Interfaces.Context;
-using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
-using Microsoft.AspNetCore.JsonPatch;
+
+using ITD.PerrosPerdidos.Application.Interfaces.Mapping;
+using ITD.PerrosPerdidos.Domain.DTO.Requests;
+using ITD.PerrosPerdidos.Domain.DTO.Response;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Mime;
+
 
 namespace ITD.PerrosPerdidos.API.Controllers
 {
@@ -11,225 +12,54 @@ namespace ITD.PerrosPerdidos.API.Controllers
     [ApiController]
     public class AdministradorController : ControllerBase
     {
-        private readonly IAdministradorPresenter _administradorPresenter;
+        private readonly IAdministradorPresenter EPresenter;
 
-        public AdministradorController(IAdministradorPresenter administradorPresenter)
+        public AdministradorController(IAdministradorPresenter _eventosPresenter)
         {
-            _administradorPresenter = administradorPresenter;
+            EPresenter = _eventosPresenter;
         }
 
         [HttpGet]
-        [Produces(MediaTypeNames.Application.Json)]
-        [Consumes(MediaTypeNames.Application.Json)]
-        public async Task<IActionResult> Get(string telefono)
+        [Route("/[controller]")]
+        [ProducesResponseType(typeof(List<RequestAdministrador>), 200)]
+        [ProducesResponseType(typeof(ProducesErrorResponseTypeAttribute), 400)]
+
+        public async Task<IActionResult> Get(int code, string nombre, string fecha, string hora, string ubicacion, string descripcion)
         {
-            var result = await _administradorPresenter.Administrador_GETAsync(telefono);
-            if (_administradorPresenter._error.Count > 0)
-            {
-                return BadRequest(_administradorPresenter._error);
-            }
-            return result != null ? Ok(result) : NotFound();
+            var result = await EPresenter.Get(code, nombre, fecha, hora, ubicacion, descripcion);
+
+            return Ok(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Administrador_POST request)
+        [Route("/[controller]")]
+        [ProducesResponseType(typeof(List<RequestAdministrador>), 201)]
+        [ProducesResponseType(typeof(ProducesErrorResponseTypeAttribute), 400)]
+
+        public async Task<IActionResult> Post(AdministradorRe post)
+
+
         {
-            var result = await _administradorPresenter.Post(request);
-            if (result != null)
-            {
-                return Ok(new { message = "Administrador agregado exitosamente." });
-            }
-            else
-            {
-                return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
-            }
+
+            var result = await EPresenter.Post(post);
+            if (result == null)
+                return Created("www.google.com", result);
+            return BadRequest(EPresenter._error);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Post([FromBody] Administrador_POST request)
-        //{
-        //    var result = await _administradorService.PostAdministrador(request);
-        //    if (result != null)
-        //    {
-        //        return Ok(new { message = "Administrador agregado exitosamente." });
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
-        //    }
-        //}
-
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Administrador_POST> patchDoc)
+        [HttpPatch]
+        [Route("/api/{id}/[controller]")]
+        [ProducesResponseType(typeof(RequestAdministrador), 200)]
+        [ProducesResponseType(typeof(ProducesErrorResponseTypeAttribute), 400)]
+        public async Task<IActionResult> Patch(int id, PatchEventosRequest patch)
         {
-            if (patchDoc != null)
+
+            var result = await EPresenter.Patch(id, patch);
+            if (result == null)
             {
-                var administrador = await _administradorPresenter.GetAdministradorByIdAsync(id);
-
-                if (administrador == null)
-                {
-                    return NotFound();
-                }
-
-                patchDoc.ApplyTo(administrador, ModelState);
-
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
-                bool result = await _administradorPresenter.UpdateAdministradorAsync(administrador);
-
-                if (!result)
-                {
-                    return BadRequest("Error al actualizar el administrador");
-                }
-
-                return new ObjectResult(administrador);
+                return BadRequest(EPresenter._error);
             }
-            else
-            {
-                return BadRequest(ModelState);
-            }
+            return Created("www.google.com", result);
         }
     }
 }
-
-//using ITD.PerrosPerdidos.Application.Interfaces.Context;
-//using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
-//using Microsoft.AspNetCore.JsonPatch;
-//using Microsoft.AspNetCore.Mvc;
-//using System.Net.Mime;
-
-
-//namespace ITD.PerrosPerdidos.API.Controllers
-//{
-//    [Route("api/[controller]")]
-//    [ApiController]
-//    public class AdministradorController : ControllerBase
-//    {
-//        private readonly IAdministradorPresenter _administradorPresenter;
-
-//        public AdministradorController(IAdministradorPresenter administradorPresenter)
-//        {
-//            _administradorPresenter = administradorPresenter;
-//        }
-
-//        [HttpGet]
-//        [Produces(MediaTypeNames.Application.Json)]
-//        [Consumes(MediaTypeNames.Application.Json)]
-//        public async Task<IActionResult> Get(string telefono)
-//        {
-//            var result = await _administradorPresenter.Administrador_GETAsync(telefono);
-//            if (_administradorPresenter._error.Count > 0)
-//            {
-//                return BadRequest(_administradorPresenter._error);
-//            }
-//            return result != null ? Ok(result) : NotFound();
-//        }
-
-//        [HttpPost]
-//        public async Task<IActionResult> Post([FromBody] Administrador_POST administrador)
-//        {
-//            var result = await _administradorService.PostAdministrador(administrador);
-//            if (result != null)
-//            {
-//                return Ok(new { message = "Administrador agregado exitosamente." });
-//            }
-//            else
-//            {
-//                return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
-//            }
-//        }
-
-//        [HttpPatch("{id}")]
-//        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<Administrador_POST> patchDoc)
-//        {
-//            if (patchDoc != null)
-//            {
-//                var administrador = await _administradorPresenter.GetAdministradorByIdAsync(id);
-
-//                if (administrador == null)
-//                {
-//                    return NotFound();
-//                }
-
-//                patchDoc.ApplyTo(administrador, ModelState);
-
-//                if (!ModelState.IsValid)
-//                {
-//                    return BadRequest(ModelState);
-//                }
-
-//                bool result = await _administradorPresenter.UpdateAdministradorAsync(administrador);
-
-//                if (!result)
-//                {
-//                    return BadRequest("Error al actualizar el administrador");
-//                }
-
-//                return new ObjectResult(administrador);
-//            }
-//            else
-//            {
-//                return BadRequest(ModelState);
-//            }
-//        }
-//        }
-//    }
-//}
-
-
-
-
-/*using ITD.PerrosPerdidos.Application.Interfaces.Presenters;
-using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
-using ITD.PerrosPerdidos.Domain.DTO.Requests;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Net.Mime;
-
-namespace ITD.PerrosPerdidos.API.Controllers
-{
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AdministradorController : ControllerBase
-    {
-        private readonly IAdministradorPresenter _administradorPresenter;
-
-
-
-        public AdministradorController(IAdministradorPresenter administradorPresenter)
-        {
-            _administradorPresenter = administradorPresenter;
-        }
-
-        [HttpGet]
-        [Produces(MediaTypeNames.Application.Json)]
-        [Consumes(MediaTypeNames.Application.Json)]
-        public async Task<IActionResult> Get(string telefono)
-        {
-            var result = await _administradorPresenter.Administrador_GETAsync(telefono);
-            if (_administradorPresenter._error.Count > 0)
-            {
-                return BadRequest(_administradorPresenter._error);
-            }
-            return result != null ? Ok(result) : NotFound();
-        }
-
-      
-    public async Task<IActionResult> Post([FromBody] Administrador_POST administrador)
-    {
-        var result = await _administradorService.PostAdministrador(administrador);
-        if (result != null)
-        {
-            return Ok(new { message = "Administrador agregado exitosamente." });
-        }
-        else
-        {
-            return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
-        }
-    }
-}
-}
-*/

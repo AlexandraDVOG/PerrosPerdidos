@@ -5,10 +5,10 @@ namespace ITD.PerrosPerdidos.Domain.DTO.DATA
 {
     public class AdministradorData
     {
-        public AdministradorAtributes data { get; set; }
 
-        public string type { get; set; }
+
+        public string? type { get; set; }
         public List<AdministradorAtributes> attributes { get; set; }
     }
-  
+
 }
