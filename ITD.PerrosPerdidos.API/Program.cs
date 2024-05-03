@@ -34,7 +34,7 @@ builder.Services.AddSwaggerGen(options =>
 
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Simulaci�n de Perros Perdidos",
+        Title = "Simulacion de Perros Perdidos",
         Contact = new OpenApiContact
         {
             Name = "Dealexandra Valentina",
@@ -48,7 +48,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Type = SecuritySchemeType.Http,
         Scheme = "basic",
-        Description = "Requiere autenticaci�n b�sica.",
+        Description = "Requiere autenticacion basica.",
         In = ParameterLocation.Header
     });
 });
