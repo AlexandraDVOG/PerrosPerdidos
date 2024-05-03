@@ -11,5 +11,16 @@ namespace ITD.PerrosPerdidos.Infrastructure.Context
         private readonly BdContext _bdContext;
         public AdministradorContext(BdContext bdContext) { _bdContext = bdContext; }
 
+        public List<string> _error { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public Task<IEnumerable<Administrador>> Get(string usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<EntityResultContext> Post(Administrador_POST request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
