@@ -6,10 +6,10 @@ using ITD.PerrosPerdidos.Infrestructura.Services;
 
 namespace ITD.PerrosPerdidos.Infrastructure.Context
 {
-    public class AdministradorContext : IAdministradorPresenter//*: IAdministradorContext
+    public class AdministradorPresenter : IAdministradorPresenter//*: IAdministradorContext
     {
         private readonly BdContext _bdContext;
-        public AdministradorContext(BdContext bdContext) { _bdContext = bdContext; }
+        public AdministradorPresenter(BdContext bdContext) { _bdContext = bdContext; }
 
         public List<string> _error { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
