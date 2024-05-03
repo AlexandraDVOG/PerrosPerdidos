@@ -9,16 +9,19 @@ namespace ITD.PerrosPerdidos.Application.Interfaces.Context
     public interface IAdministradorPresenter
 
     {
-        List<string> _error { get; set; }
+        public List<string> _error { get; set; }
+
+       //public  Task Administrador_GETAsync(string telefono);
 
         //public Task<Administrador_POST> PostAdministrador(Administrador_POST administrador);
         public Task<IEnumerable<Administrador>> Get(string usuario);
         public Task<EntityResultContext> Post(Administrador_POST request);
+       //public Task<bool> UpdateAdministradorAsync(object administrador);
         //public Task PostAdministrador(Administrador_POST request);
     }
-    public interface IAdministradorService
+    //public interface IAdministradorService
 
-    {
+    //{
 
-    }
+    //}
 }
