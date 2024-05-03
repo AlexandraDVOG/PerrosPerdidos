@@ -55,7 +55,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
         public async ValueTask<AdministradorRe> Post(AdministradorRe post)
         {
             // crear response y 
-            var evento = await _eventosRepository.EventosContext.Post(post);
+            var evento = await _eventosRepository.AdministradorPresenter.Post(post);
             if (evento.code == 201)
                 return new AdministradorRe()
                 {
@@ -87,7 +87,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
             }
 
 
-            var result = await _eventosRepository.EventosContext.Patch(patch);
+            var result = await _eventosRepository.AdministradorPresenter.Patch(patch);
 
             if (result == null)
             {
