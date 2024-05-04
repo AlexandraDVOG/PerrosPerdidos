@@ -3,6 +3,7 @@
 using ITD.PerrosPerdidos.Application.Interfaces.Mapping;
 using ITD.PerrosPerdidos.Domain.DTO.Requests;
 using ITD.PerrosPerdidos.Domain.DTO.Response;
+using ITD.PerrosPerdidos.Infrastructure.Context;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -24,9 +25,10 @@ namespace ITD.PerrosPerdidos.API.Controllers
         [ProducesResponseType(typeof(List<RequestAdministrador>), 200)]
         [ProducesResponseType(typeof(ProducesErrorResponseTypeAttribute), 400)]
 
-        public async Task<IActionResult> Get(int code, string nombre, string fecha, string hora, string ubicacion, string descripcion)
+        public async Task<IActionResult> Get(int code, string usuario, string contrasena, int? celular)
+        
         {
-            var result = await EPresenter.Get(code, nombre, fecha, hora, ubicacion, descripcion);
+            var result = await EPresenter.Get(code, usuario, contrasena, celular);
 
             return Ok(result);
         }
@@ -51,7 +53,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
         [Route("/api/{id}/[controller]")]
         [ProducesResponseType(typeof(RequestAdministrador), 200)]
         [ProducesResponseType(typeof(ProducesErrorResponseTypeAttribute), 400)]
-        public async Task<IActionResult> Patch(int id, PatchEventosRequest patch)
+        public async Task<IActionResult> Patch(int id, PatchAdministradorRequest patch)
         {
 
             var result = await EPresenter.Patch(id, patch);

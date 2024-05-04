@@ -10,7 +10,7 @@ namespace ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes
     {
         public string usuario { get; set; }
         public int? celular { get; set; }
-        public string contraseña { get; set; }
+        public string contrasena { get; set; }
     }
     
 }

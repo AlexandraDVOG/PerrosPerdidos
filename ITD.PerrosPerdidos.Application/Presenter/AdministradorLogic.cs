@@ -3,8 +3,8 @@ using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
 using ITD.PerrosPerdidos.Domain.DTO.Requests;
-using ITD.PerrosPerdidos.Domain.POCOS.Context;
-using System.Reflection;
+using ITD.PerrosPerdidos.Infrastructure.Context;
+
 
 
 namespace ITD.PerrosPerdidos.Application.Interfaces
@@ -27,25 +27,23 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
         }
 
 
-        public async ValueTask<AdministradorRe> Get(int code, string nombre, string fecha, string hora, string ubicacion, string descripcion)
+        public async ValueTask<AdministradorRe> Get(int code, string usuario, string contrasena, int? celular)
         {
-            var eventosResult = await _eventosRepository.AdministradorPresenter.Get(code, nombre, fecha, hora, ubicacion, descripcion);
+            var eventosResult = await _eventosRepository.AdministradorPresenter.Get(code, usuario, contrasena, celular);
 
             List<AdministradorAtributes> dT0s = eventosResult.Select(evento => new AdministradorAtributes
             {
                 code = evento.code,
                 result = evento.result ?? "", // Asignar cadena vacía si result es nulo
-                nombre = evento.nombre,
-                fecha = evento.fecha,
-                hora = evento.hora,
-                ubicacion = evento.ubicacion,
-                descripcion = evento.descripcion
+                usuario = evento.usuario,
+                contrasena = evento.contrasena,
+                celular = evento.celular
             }).ToList();
 
             AdministradorData eventData = new AdministradorData
             {
                 attributes = dT0s,
-                type = "nombre"
+                type = "usuario"
             };
 
             return new AdministradorRe { data = eventData };
@@ -68,11 +66,11 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
                         type = "eventos"
                     }
                 };
-            _errorResponse.errors = new List<ErrorData>() { new ErrorData() { code = evento.code, detail = evento.result, status = evento.nombre, title = "Todo se derrumbo" } };
+            _errorResponse.errors = new List<ErrorData>() { new ErrorData() { code = evento.code, detail = evento.result, status = evento.usuario, title = "Todo se derrumbo" } };
             return null;
         }
 
-        public async Task<AdministradorRe> Patch(int id, PatchEventosRequest patch)
+        public async Task<AdministradorRe> Patch(int id, PatchAdministradorRequest patch)
         {
             if (id <= 0)
             {

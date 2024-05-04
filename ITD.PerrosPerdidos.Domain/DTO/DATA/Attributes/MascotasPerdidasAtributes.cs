@@ -13,7 +13,7 @@ namespace ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes
         public string color { get; set; }
         public string tamaño { get; set; }
         public char sexo { get; set; }
-        public  long? celular { get; set; }
+        public  int? celular { get; set; }
         public byte[]? Imagen { get; set; }
     }
 }

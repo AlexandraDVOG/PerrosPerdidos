@@ -6,6 +6,8 @@ namespace ITD.PerrosPerdidos.Domain.POCOS.Context
     {
         public string? result { get; set; }
         public int code { get; set; }
+
+
     }
 
 }

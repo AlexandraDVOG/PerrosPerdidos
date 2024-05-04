@@ -7,7 +7,7 @@ namespace ITD.PerrosPerdidos.Domain.POCOS.Context
         public int code { get; set; }
         public string? result { get; set; }
         public string usuario { get; set; }
-        public string telefono { get; set; }
+        public int? celular { get; set; }
         public string contrasena { get; set; }
     }
 }

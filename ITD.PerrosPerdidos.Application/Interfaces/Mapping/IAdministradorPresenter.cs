@@ -2,6 +2,8 @@
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
 using ITD.PerrosPerdidos.Domain.DTO.Requests;
 using ITD.PerrosPerdidos.Domain.POCOS.Context;
+using ITD.PerrosPerdidos.Infrastructure.Context;
+using Newtonsoft.Json.Serialization;
 
 
 namespace ITD.PerrosPerdidos.Application.Interfaces.Mapping
@@ -10,18 +12,14 @@ namespace ITD.PerrosPerdidos.Application.Interfaces.Mapping
 
     {
         public List<string> _error { get; set; }
+        
 
-        //public  Task Administrador_GETAsync(string telefono);
+        public Task<List<EntityAdministradorContext>> Get(int code, string usuario, string contrasena, int? celular);
+        
+        public Task<EntityAdministradorContext> Post(AdministradorRe post);
+        public Task<EntityAdministradorContext> Patch(PatchAdministradorRequest patch);
+      
 
-        //public Task<Administrador_POST> PostAdministrador(Administrador_POST administrador);
-        public Task<IEnumerable<AdministradorRe>> Get(string usuario);
-        public Task<EntityResultContext> Post(Administrador_POST request);
-        //public Task<bool> UpdateAdministradorAsync(object administrador);
-        //public Task PostAdministrador(Administrador_POST request);
     }
-    //public interface IAdministradorService
 
-    //{
-
-    //}
 }
