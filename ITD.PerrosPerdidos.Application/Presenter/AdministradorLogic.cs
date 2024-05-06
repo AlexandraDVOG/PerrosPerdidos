@@ -3,6 +3,7 @@ using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Atributes;
 using ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes;
 using ITD.PerrosPerdidos.Domain.DTO.Requests;
+using ITD.PerrosPerdidos.Domain.DTO.Response;
 using ITD.PerrosPerdidos.Infrastructure.Context;
 
 
@@ -31,6 +32,14 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
         {
             var eventosResult = await _eventosRepository.AdministradorPresenter.Get(code, usuario, contrasena, celular);
 
+            //List<AdministradorAtributes> dT0s = eventosResult.Select(evento => new AdministradorAtributes
+            //{
+            //    code = evento.code,
+            //    result = evento.result ?? "", // Asignar cadena vacía si result es nulo
+            //    usuario = evento.usuario,
+            //    contrasena = evento.contrasena,
+            //    celular = evento.celular
+            //}).ToList();
             List<AdministradorAtributes> dT0s = eventosResult.Select(evento => new AdministradorAtributes
             {
                 code = evento.code,
@@ -39,6 +48,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
                 contrasena = evento.contrasena,
                 celular = evento.celular
             }).ToList();
+
 
             AdministradorData eventData = new AdministradorData
             {
@@ -50,7 +60,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
         }
 
 
-        public async ValueTask<AdministradorRe> Post(AdministradorRe post)
+        public async ValueTask<AdministradorRe> Post(RAdmin post)
         {
             // crear response y 
             var evento = await _eventosRepository.AdministradorPresenter.Post(post);

@@ -38,7 +38,7 @@ namespace ITD.PerrosPerdidos.API.Controllers
         [ProducesResponseType(typeof(List<RequestAdministrador>), 201)]
         [ProducesResponseType(typeof(ProducesErrorResponseTypeAttribute), 400)]
 
-        public async Task<IActionResult> Post(AdministradorRe post)
+        public async Task<IActionResult> Post(RAdmin post)
 
 
         {

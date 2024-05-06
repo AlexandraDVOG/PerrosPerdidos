@@ -96,7 +96,7 @@ namespace ITD.PerrosPerdidos.Infrastructure.Context
             //else
             //{
             ErrorData _errorData = new ErrorData();
-            var result = await _bDContext.ExecuteStoredProcedureQueryFirstOrDefault<EntityAdministradorContext>("ActualizarEventoDiario", dp);
+            var result = await _bDContext.ExecuteStoredProcedureQueryFirstOrDefault<EntityAdministradorContext>("Actualizar", dp);
             if (result.code == 200)
                 return result;
             else

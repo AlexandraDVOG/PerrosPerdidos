@@ -18,10 +18,10 @@ namespace ITD.PerrosPerdidos.Infrastructure.Repository
             _bd = new BdContext(configuration);
         }
 
-        public IAdministradorContext administradorContext => new AdministradorContext(_bd);
+        public IAdministradorContext AdministradorPresenter => new AdministradorPresenter(_bd);
 
         public IMascotasPerdidasContext MascotasPerdidasContext => new MascotasPerdidasContext(_bd);
-        public IAdministradorPresenter AdministradorPresenter => new AdministradorPresenter(_bd);
+        //public IAdministradorPresenter AdministradorLogic => new AdministradorLogic(_bd);
 
         
     }

@@ -12,4 +12,5 @@ namespace ITD.PerrosPerdidos.Domain.DTO.Response
     {
         public ReAdministradorData data { get; set; }
     }
+
 }

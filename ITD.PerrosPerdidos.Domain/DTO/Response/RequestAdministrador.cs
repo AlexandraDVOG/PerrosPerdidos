@@ -10,6 +10,6 @@ namespace ITD.PerrosPerdidos.Domain.DTO.Response
 {
     public class RequestAdministrador
     {
-        public RequestAdministradorData data { get; set; }
+        public ReAdministradorData data { get; set; }
     }
 }
