@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ITD.PerrosPerdidos.Domain.DTO.DATA.Attributes.RequestData
 {
-    public class RequestAdministradorData
+    public class ReAdministradorData
     {
         public int code { get; set; }
         public string? result { get; set; }
-        
+
         public required string usuario { get; set; }
         public int? celular { get; set; }
-        public required string contraseña { get; set; }
+        public string contrasena { get; set; }
     }
 }

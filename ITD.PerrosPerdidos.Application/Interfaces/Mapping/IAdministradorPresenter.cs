@@ -12,10 +12,10 @@ namespace ITD.PerrosPerdidos.Application.Interfaces.Mapping
 
     {
         public List<string> _error { get; set; }
-        
 
-        public Task<List<EntityAdministradorContext>> Get(int code, string usuario, string contrasena, int? celular);
-        
+
+        public ValueTask<AdministradorRe> Get(int code, string usuario, string contrasena, int? celular);
+
         public Task<EntityAdministradorContext> Post(AdministradorRe post);
         public Task<EntityAdministradorContext> Patch(PatchAdministradorRequest patch);
       

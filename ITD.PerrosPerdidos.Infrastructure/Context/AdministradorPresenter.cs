@@ -1,7 +1,9 @@
 ﻿using Dapper;
+using ITD.PerrosPerdidos.Application.Interfaces.Context;
 using ITD.PerrosPerdidos.Application.Interfaces.Mapping;
 using ITD.PerrosPerdidos.Domain.DTO.DATA;
 using ITD.PerrosPerdidos.Domain.DTO.Requests;
+using ITD.PerrosPerdidos.Domain.DTO.Response;
 using ITD.PerrosPerdidos.Domain.Enums;
 using ITD.PerrosPerdidos.Domain.POCOS.Context;
 using ITD.PerrosPerdidos.Infrestructura.Services;
@@ -9,7 +11,7 @@ using System.Data;
 
 namespace ITD.PerrosPerdidos.Infrastructure.Context
 {
-    public class AdministradorPresenter : IAdministradorPresenter//*: IAdministradorContext
+    public class AdministradorPresenter: IAdministradorContext
     {
         public ErrorData _errorData { get; set; }
         public readonly BdContext _bDContext;
@@ -45,7 +47,7 @@ namespace ITD.PerrosPerdidos.Infrastructure.Context
             return new List<EntityAdministradorContext>();
         }
 
-        public async Task<EntityAdministradorContext> Post(AdministradorRe post)
+        public async Task<EntityAdministradorContext> Post(RAdmin post)
         {
             DynamicParameters dpr = new DynamicParameters();
             dpr.Add("@usuario", post.data.usuario, System.Data.DbType.String, System.Data.ParameterDirection.Input);
