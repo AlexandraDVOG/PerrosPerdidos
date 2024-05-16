@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITD.PerrosPerdidos.API", "ITD.PerrosPerdidos.API\ITD.PerrosPerdidos.API.csproj", "{196D131E-9C82-4B93-8BDA-C6EFD2E3279F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITD.PerrosPerdidos.API", "ITD.PerrosPerdidos.API\ITD.PerrosPerdidos.API.csproj", "{196D131E-9C82-4B93-8BDA-C6EFD2E3279F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITD.PerrosPerdidos.Application", "ITD.PerrosPerdidos.Application\ITD.PerrosPerdidos.Application.csproj", "{E486C59D-2050-4332-9D67-721C83F3935B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITD.PerrosPerdidos.Application", "ITD.PerrosPerdidos.Application\ITD.PerrosPerdidos.Application.csproj", "{E486C59D-2050-4332-9D67-721C83F3935B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITD.PerrosPerdidos.Domain", "ITD.PerrosPerdidos.Domain\ITD.PerrosPerdidos.Domain.csproj", "{C360ED7A-6DE5-4BBB-86DC-18E609844AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITD.PerrosPerdidos.Domain", "ITD.PerrosPerdidos.Domain\ITD.PerrosPerdidos.Domain.csproj", "{C360ED7A-6DE5-4BBB-86DC-18E609844AFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITD.PerrosPerdidos.Infrastructure", "ITD.PerrosPerdidos.Infrastructure\ITD.PerrosPerdidos.Infrastructure.csproj", "{D2462951-DD21-4627-816E-BE59DA943319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITD.PerrosPerdidos.Infrastructure", "ITD.PerrosPerdidos.Infrastructure\ITD.PerrosPerdidos.Infrastructure.csproj", "{D2462951-DD21-4627-816E-BE59DA943319}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

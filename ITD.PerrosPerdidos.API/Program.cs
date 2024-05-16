@@ -13,7 +13,7 @@ var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
 if (string.IsNullOrEmpty(environment))
 {
-    throw new ArgumentException("La variable de entorno ASPNETCORE_ENVIRONMENT no está configurada.");
+    throw new ArgumentException("La variable de entorno ASPNETCORE_ENVIRONMENT no estï¿½ configurada.");
 }
 
 
@@ -34,7 +34,7 @@ builder.Services.AddSwaggerGen(options =>
 
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Simulación de Perros Perdidos",
+        Title = "Simulaciï¿½n de Perros Perdidos",
         Contact = new OpenApiContact
         {
             Name = "Dealexandra Valentina",
@@ -48,7 +48,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Type = SecuritySchemeType.Http,
         Scheme = "basic",
-        Description = "Requiere autenticación básica.",
+        Description = "Requiere autenticaciï¿½n bï¿½sica.",
         In = ParameterLocation.Header
     });
 });

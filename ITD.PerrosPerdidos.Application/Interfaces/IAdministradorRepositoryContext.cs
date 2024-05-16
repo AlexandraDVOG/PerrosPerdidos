@@ -6,7 +6,7 @@ namespace ITD.PerrosPerdidos.Application.Interfaces
 {
     public interface IAdministradorRepositoryContext
     {
-        public IMascotasPerdidasContext MascotasPerdidasContext { get; }
+        //public IMascotasPerdidasContext MascotasPerdidasContext { get; }
         //public IAdministradorPresenter AdministradorLogic{ get; }
 
         public IAdministradorContext AdministradorPresenter { get; }
